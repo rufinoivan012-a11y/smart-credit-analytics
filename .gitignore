@@ -1,0 +1,129 @@
+# ---------------------------------------------------------------------------
+# Secrets and local configuration
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets/
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+build/
+dist/
+downloads/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Test, lint, type-check, and coverage caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# ---------------------------------------------------------------------------
+# Jupyter
+# ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Local IDE and editor settings
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.swo
+*~
+
+# ---------------------------------------------------------------------------
+# Operating-system files
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ---------------------------------------------------------------------------
+# Data
+#
+# Keep only the small synthetic source dataset required to reproduce the
+# current portfolio project. Generated, processed, or confidential data must
+# remain outside Git.
+# ---------------------------------------------------------------------------
+data/raw/*
+!data/raw/fintech_credit_risk_dataset.csv
+!data/raw/.gitkeep
+
+data/trusted/*
+!data/trusted/.gitkeep
+
+data/analytics/*
+!data/analytics/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
+
+data/interim/*
+!data/interim/.gitkeep
+
+data/external/*
+!data/external/.gitkeep
+
+# ---------------------------------------------------------------------------
+# PostgreSQL, local databases, and database exports
+# ---------------------------------------------------------------------------
+pgdata/
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.backup
+*.sql.gz
+
+# ---------------------------------------------------------------------------
+# Logs, temporary files, and generated outputs
+# ---------------------------------------------------------------------------
+*.log
+logs/*
+!logs/.gitkeep
+tmp/
+temp/
+*.tmp
+*.temp
+
+# ---------------------------------------------------------------------------
+# Machine-learning experiment and model artifacts
+# Keep source code and configuration under models/, but do not version
+# generated binaries or experiment stores by default.
+# ---------------------------------------------------------------------------
+models/artifacts/*
+!models/artifacts/.gitkeep
+mlruns/
+wandb/
+
+# ---------------------------------------------------------------------------
+# Dashboard temporary files and generated exports
+# Keep the final portfolio source file intentionally when it is ready.
+# ---------------------------------------------------------------------------
+~$*.pbix
+*.pbix.bak
+dashboards/exports/*
+!dashboards/exports/.gitkeep
+

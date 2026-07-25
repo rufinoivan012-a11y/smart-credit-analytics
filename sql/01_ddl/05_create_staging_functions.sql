@@ -1,0 +1,56 @@
+CREATE OR REPLACE FUNCTION staging.try_integer(p_value TEXT)
+RETURNS INTEGER
+LANGUAGE plpgsql
+IMMUTABLE
+AS $$
+BEGIN
+    RETURN NULLIF(BTRIM(p_value), '')::INTEGER;
+EXCEPTION
+    WHEN OTHERS THEN
+        RETURN NULL;
+END;
+$$;
+
+CREATE OR REPLACE FUNCTION staging.try_numeric(p_value TEXT)
+RETURNS NUMERIC
+LANGUAGE plpgsql
+IMMUTABLE
+AS $$
+BEGIN
+    RETURN NULLIF(BTRIM(p_value), '')::NUMERIC;
+EXCEPTION
+    WHEN OTHERS THEN
+        RETURN NULL;
+END;
+$$;
+
+CREATE OR REPLACE FUNCTION staging.try_date(p_value TEXT)
+RETURNS DATE
+LANGUAGE plpgsql
+IMMUTABLE
+AS $$
+BEGIN
+    RETURN NULLIF(BTRIM(p_value), '')::DATE;
+EXCEPTION
+    WHEN OTHERS THEN
+        RETURN NULL;
+END;
+$$;
+
+CREATE OR REPLACE FUNCTION staging.try_boolean(p_value TEXT)
+RETURNS BOOLEAN
+LANGUAGE SQL
+IMMUTABLE
+AS $$
+    SELECT CASE LOWER(NULLIF(BTRIM(p_value), ''))
+        WHEN '1' THEN TRUE
+        WHEN '0' THEN FALSE
+        WHEN 'true' THEN TRUE
+        WHEN 'false' THEN FALSE
+        WHEN 't' THEN TRUE
+        WHEN 'f' THEN FALSE
+        WHEN 'yes' THEN TRUE
+        WHEN 'no' THEN FALSE
+        ELSE NULL
+    END;
+$$;
