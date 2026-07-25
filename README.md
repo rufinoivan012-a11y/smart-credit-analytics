@@ -58,8 +58,8 @@ flowchart LR
     A["Synthetic CSV"] --> B["Raw layer"]
     B --> C["Trusted layer"]
     C --> D["Analytics layer"]
-    D --> E["Power BI â€” planned"]
-    C --> F["ML models â€” planned"]
+    D --> E["Power BI - planned"]
+    C --> F["ML models - planned"]
 ```
 
 The pipeline follows a layered approach:
@@ -119,33 +119,33 @@ channel, credit behavior, digital risk, and time.
 
 ```text
 smart-credit-analytics/
-â”œâ”€â”€ dashboards/                    # Power BI files and exports â€” planned
-â”œâ”€â”€ data/
-â”‚   â””â”€â”€ raw/
-â”‚       â””â”€â”€ fintech_credit_risk_dataset.csv
-â”œâ”€â”€ docs/
-â”‚   â”œâ”€â”€ assets/
-â”‚   â”‚   â”œâ”€â”€ solution_architecture.png
-â”‚   â”‚   â””â”€â”€ erd_star_schema.png
-â”‚   â”œâ”€â”€ 01_business_requirements.md
-â”‚   â”œâ”€â”€ 02_solution_architecture.md
-â”‚   â”œâ”€â”€ 03_data_dictionary.md
-â”‚   â”œâ”€â”€ 04_data_model.md
-â”‚   â”œâ”€â”€ 05_data_quality_rules.md
-â”‚   â”œâ”€â”€ 06_data_lineage.md
-â”‚   â””â”€â”€ 07_pipeline_execution.md
-â”œâ”€â”€ models/                        # Model code/configuration â€” planned
-â”œâ”€â”€ notebooks/                     # EDA and experiments â€” planned
-â”œâ”€â”€ sql/
-â”‚   â”œâ”€â”€ 00_setup/
-â”‚   â”œâ”€â”€ 01_ddl/
-â”‚   â”œâ”€â”€ 02_bootstrap/
-â”‚   â”œâ”€â”€ 03_incremental/
-â”‚   â”œâ”€â”€ 04_analytics/
-â”‚   â””â”€â”€ 05_validation/
-â”œâ”€â”€ src/                           # Reusable Python pipeline code â€” planned
-â”œâ”€â”€ .gitignore
-â””â”€â”€ README.md
+|-- dashboards/                    # Power BI files and exports - planned
+|-- data/
+|   `-- raw/
+|       `-- fintech_credit_risk_dataset.csv
+|-- docs/
+|   |-- assets/
+|   |   |-- solution_architecture.png
+|   |   `-- erd_star_schema.png
+|   |-- 01_business_requirements.md
+|   |-- 02_solution_architecture.md
+|   |-- 03_data_dictionary.md
+|   |-- 04_data_model.md
+|   |-- 05_data_quality.md
+|   |-- 06_data_lineage.md
+|   `-- 07_pipeline_execution.md
+|-- models/                        # Model code and configuration - planned
+|-- notebooks/                     # EDA and experiments - planned
+|-- sql/
+|   |-- 00_setup/
+|   |-- 01_ddl/
+|   |-- 02_bootstrap/
+|   |-- 03_incremental/
+|   |-- 04_analytics/
+|   `-- 05_validation/
+|-- src/                           # Reusable Python pipeline code - planned
+|-- .gitignore
+`-- README.md
 ```
 
 Empty planned directories can contain a `.gitkeep` file so that Git preserves
@@ -278,7 +278,7 @@ it must be removed from version control immediately.
 | [Solution Architecture](docs/02_solution_architecture.md) | Components, layers, and technical flow |
 | [Data Dictionary](docs/03_data_dictionary.md) | Fields, types, definitions, and business meaning |
 | [Data Model](docs/04_data_model.md) | Entities, relationships, keys, and dimensional design |
-| [Data Quality](docs/05_data_quality_rules.md) | Quality dimensions, rules, thresholds, and controls |
+| [Data Quality](docs/05_data_quality.md) | Quality dimensions, rules, thresholds, and controls |
 | [Data Lineage](docs/06_data_lineage.md) | Source-to-target transformations and dependencies |
 | [Pipeline Execution](docs/07_pipeline_execution.md) | Execution order, validation, recovery, and operations |
 
